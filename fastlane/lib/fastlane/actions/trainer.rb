@@ -14,6 +14,9 @@ module Fastlane
         UI.message("resulting_paths: #{resulting_paths}")
 
         resulting_paths.each do |path, test_results|
+          UI.message("path: #{path}")
+          UI.message("test_results: #{test_results}")
+
           UI.test_failure!("Unit tests failed") if fail_build && !test_results[:successful]
         end
 

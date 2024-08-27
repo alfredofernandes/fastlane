@@ -259,6 +259,8 @@ module Scan
     end
 
     def handle_results(tests_exit_status)
+      UI.message("Start of handle_results")
+
       copy_simulator_logs
       zip_build_products
       copy_xctestrun
