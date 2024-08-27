@@ -9,6 +9,7 @@ module Fastlane
 
         fail_build = params[:fail_build]
         resulting_paths = Trainer::TestParser.auto_convert(params)
+        puts "resulting_paths: #{resulting_paths}"
         resulting_paths.each do |path, test_results|
           UI.test_failure!("Unit tests failed") if fail_build && !test_results[:successful]
         end
